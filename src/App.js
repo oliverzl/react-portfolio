@@ -46,7 +46,7 @@ function App() {
 
 	return (
 		<>
-			<Router basename="/oliver97.com">
+			<Router basename="/react-portfolio">
 				<div className="scroll-container">
 					<Navbar {...scrollRefs} />
 					<Sidebar />
