@@ -18,54 +18,55 @@ import Contact from "./pages/Contact";
 import "./App.css";
 
 function App() {
-  const refs = {
-    homeRef: useRef(null),
-    aboutRef: useRef(null),
-    skillsRef: useRef(null),
-    projectsRef: useRef(null),
-    contactRef: useRef(null),
-  };
+	const refs = {
+		homeRef: useRef(null),
+		aboutRef: useRef(null),
+		skillsRef: useRef(null),
+		projectsRef: useRef(null),
+		contactRef: useRef(null),
+	};
 
-  const scrollRefs = {
-    scrollHome: function () {
-      return refs.homeRef.current.scrollIntoView();
-    },
-    scrollAbout: function () {
-      return refs.aboutRef.current.scrollIntoView();
-    },
-    scrollSkills: function () {
-      return refs.skillsRef.current.scrollIntoView();
-    },
-    scrollProjects: function () {
-      return refs.projectsRef.current.scrollIntoView();
-    },
-    scrollContact: function () {
-      return refs.contactRef.current.scrollIntoView();
-    },
-  };
+	const scrollRefs = {
+		scrollHome: function () {
+			return refs.homeRef.current.scrollIntoView();
+		},
+		scrollAbout: function () {
+			return refs.aboutRef.current.scrollIntoView();
+		},
+		scrollSkills: function () {
+			return refs.skillsRef.current.scrollIntoView();
+		},
+		scrollProjects: function () {
+			return refs.projectsRef.current.scrollIntoView();
+		},
+		scrollContact: function () {
+			return refs.contactRef.current.scrollIntoView();
+		},
+	};
 
-  return (
-    <>
-      <Router>
-        <div className='scroll-container'>
-          <Navbar {...scrollRefs} />
-          <Sidebar />
-          <div className='scroll-section'>
-            <Home refProp={refs.homeRef} />
-          </div>
-          <div className='scroll-section'>
-            <About refProp={refs.aboutRef} />
-          </div>
-          <div className='scroll-section'>
-            <Skills refProp={refs.skillsRef} />
-          </div>
+	return (
+		<>
+			<Router>
+				<div className="scroll-container">
+					<Navbar {...scrollRefs} />
+					<Sidebar />
+					<div className="scroll-section">
+						<Home refProp={refs.homeRef} />
+					</div>
 
-          <Projects refProp={refs.projectsRef} />
-          <Contact refProp={refs.contactRef} />
-        </div>
-      </Router>
-    </>
-  );
+					<div className="scroll-section">
+						<Skills refProp={refs.skillsRef} />
+					</div>
+
+					<Projects refProp={refs.projectsRef} />
+					<div className="scroll-section">
+						<About refProp={refs.aboutRef} />
+					</div>
+					<Contact refProp={refs.contactRef} />
+				</div>
+			</Router>
+		</>
+	);
 }
 
 export default App;
