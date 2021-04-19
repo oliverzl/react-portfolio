@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "animate.css/animate.min.css";
+import anime from "animejs/lib/anime.es.js";
 
 //import components
 import Navbar from "./components/Navbar";

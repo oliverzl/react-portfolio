@@ -497,3 +497,71 @@ textarea {
 	outline: none;
 	resize: none;
 }
+
+.spinLeaf {
+	position: absolute;
+	height: 30px;
+	left: 50%;
+}
+
+#firstLeaf {
+	position: relative;
+	top: 200px;
+	left: -30px;
+}
+
+#secondLeaf {
+	position: relative;
+	top: 400px;
+	left: -300px;
+}
+
+#thirdLeaf {
+	position: relative;
+	top: 400px;
+	left: -300px;
+}
+
+#fourthLeaf {
+	position: relative;
+	top: 400px;
+	left: -300px;
+}
+
+#fifthLeaf {
+	position: relative;
+	top: 400px;
+	left: -300px;
+}
+
+/* ------------------ PATH STYLINGS  ( form of divs wrap) ---------------- */
+
+.leafWrap1 {
+	position: absolute;
+	left: 50%;
+	top: -40%;
+}
+
+.leafWrap2 {
+	position: absolute;
+	left: 50%;
+	top: -15%;
+}
+
+.leafWrap3 {
+	position: absolute;
+	left: 60%;
+	top: -60%;
+}
+
+.leafWrap4 {
+	position: absolute;
+	left: 60%;
+	top: -80%;
+}
+
+.leafWrap5 {
+	position: absolute;
+	left: 60%;
+	top: -80%;
+}
