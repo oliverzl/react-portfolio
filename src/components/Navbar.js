@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { FaBars } from "react-icons/fa";
+
 import { useGlobalContext } from "../context";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.jpg";
@@ -12,7 +12,7 @@ const Navbar = ({
 	scrollProjects,
 	scrollContact,
 }) => {
-	const { openSidebar, openMainbar } = useGlobalContext();
+	const { openMainbar } = useGlobalContext();
 
 	return (
 		<>
@@ -51,7 +51,6 @@ const Navbar = ({
 					</li>
 				</ul>
 				<div className="nav-logo"></div>
-				<FaBars onClick={openSidebar} className="mobile-menu" />
 			</nav>
 		</>
 	);

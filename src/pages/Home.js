@@ -2,78 +2,19 @@ import React, { useRef, useState, useEffect } from "react";
 import Typist from "react-typist";
 import { DiMongodb } from "react-icons/di";
 import anime from "animejs/lib/anime.es.js";
-
+import ReactIcon from "../images/svgcomponent/ReactIcon";
 import leaf3 from "../images/leaf3.svg";
 import { path } from "animejs";
 
+import { leafAnimate } from "../components/leafAnimation";
+
+import { useGlobalContext } from "../context";
+
 const Home = (props) => {
 	useEffect(() => {
-		let leafPath1 = anime.path("#firstLeafPath path");
+		leafAnimate();
+	}, []);
 
-		anime({
-			targets: "#firstLeaf",
-			translateX: leafPath1("x"),
-			translateY: leafPath1("y"),
-			rotateX: 350,
-			rotateY: 400,
-			rotateZ: 300,
-			easing: "linear",
-			duration: 1400,
-			loop: true,
-		});
-
-		let leafPath2 = anime.path("#secondLeafPath path");
-		anime({
-			targets: "#secondLeaf",
-			translateX: leafPath2("x"),
-			translateY: leafPath2("y"),
-			rotateX: 350,
-			rotateY: 400,
-			rotateZ: 300,
-			easing: "linear",
-			duration: 1350,
-			loop: true,
-		});
-
-		let leafPath3 = anime.path("#thirdLeafPath path");
-		anime({
-			targets: "#thirdLeaf",
-			translateX: leafPath3("x"),
-			translateY: leafPath3("y"),
-			rotateX: 550,
-			// rotateY: 600,
-			rotateZ: 700,
-			easing: "linear",
-			duration: 2500,
-			loop: true,
-		});
-
-		let leafPath4 = anime.path("#fourthLeafPath path");
-		anime({
-			targets: "#fourthLeaf",
-			translateX: leafPath4("x"),
-			translateY: leafPath4("y"),
-			rotateX: 550,
-			// rotateY: 600,
-			rotateZ: 700,
-			easing: "linear",
-			duration: 5000,
-			loop: true,
-		});
-
-		let leafPath5 = anime.path("#fifthLeafPath path");
-		anime({
-			targets: "#fifthLeaf",
-			translateX: leafPath5("x"),
-			translateY: leafPath5("y"),
-			rotateX: 550,
-			// rotateY: 600,
-			rotateZ: 700,
-			easing: "linear",
-			duration: 2000,
-			loop: true,
-		});
-	});
 	return (
 		<div className="main-bg scroll-section" ref={props.refProp}>
 			<div className="hero">
@@ -155,6 +96,10 @@ const Home = (props) => {
 					</Typist>
 				</div>
 			</div>
+
+			<h6 className="clickrestart">
+				Click the headers to restart the animation
+			</h6>
 		</div>
 	);
 };

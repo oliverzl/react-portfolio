@@ -136,6 +136,10 @@ button {
 	height: 100vh;
 }
 
+.main-bg1 {
+	height: 100vh;
+	background: skyblue;
+}
 .home-title {
 	position: absolute;
 	color: white;
@@ -264,7 +268,7 @@ button {
 .description h2 {
 	font-size: 60px;
 	line-height: 1;
-	text-shadow: 3px 3px 1px #026841;
+	text-shadow: 3px 3px 1px #0d5b31;
 }
 
 .typespan {
@@ -273,7 +277,7 @@ button {
 	color: silver;
 	font-weight: 800;
 	margin: 3px 0;
-	text-shadow: 3px 3px 1px #026841;
+	text-shadow: 3px 3px 1px #0d5b31;
 }
 
 .typespan-h2 {
@@ -380,18 +384,44 @@ button {
 
 .skills-h1 {
 	position: relative;
-	top: 18vh;
-	left: 15vw;
+	top: 15%;
+	text-align: center;
+	color: silver;
+	text-shadow: 3px 3px 1px #0d5b31;
 }
 
 .lastspan {
 	padding-top: 10px;
 }
 
+.centersvg {
+	background: yellowgreen;
+}
+
+/* all path stylings (animation) */
+.svg-path {
+	stroke: silver;
+	stroke-width: 2;
+	fill: none;
+}
+
+/* individual word animation stylings */
+.word-svg {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 0;
+	margin-top: 8%;
+	margin-left: 15%;
+}
+
+/* #projects-svg path {
+
+} */
+
 .skills-logos {
+	position: absolute;
 	display: flex;
 	flex-direction: column;
-	margin-top: 10vh;
+	top: 120vh;
 }
 
 .skills-logo {
@@ -415,13 +445,6 @@ button {
 	top: 9vh;
 }
 
-/* projects styling */
-
-.projects-h1 {
-	padding-top: 16vh;
-	padding-left: 14vw;
-}
-
 /* contact me styling */
 .contact-h1 {
 	padding-top: 15vh;
@@ -435,7 +458,9 @@ button {
 .form-container {
 	display: block;
 	text-align: center;
-	margin-right: 2vw;
+	margin-left: 10vw;
+	/* margin-right: 2vw; */
+	/* padding-top: 30vh; */
 }
 
 .form-control {
@@ -564,4 +589,26 @@ textarea {
 	position: absolute;
 	left: 60%;
 	top: -80%;
+}
+
+/* this shadow is for all the animated svg headers */
+.headerShadow {
+	-webkit-filter: drop-shadow(5px 2px 2px #0d5b31);
+	filter: drop-shadow(5px 2px 2px #0d5b31);
+}
+
+.clickrestart {
+	position: relative;
+	bottom: 10vh;
+	text-align: center;
+	color: silver;
+	text-shadow: 2px 2px 2px #0d5b31;
+}
+
+.discuss {
+	position: relative;
+	margin-left: 15%;
+	top: -10vh;
+	color: silver;
+	text-shadow: 2px 2px 2px #0d5b31;
 }
