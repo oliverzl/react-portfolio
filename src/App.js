@@ -1,9 +1,6 @@
 import React, { useRef, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import "animate.css/animate.min.css";
-import anime from "animejs/lib/anime.es.js";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import { useGlobalContext } from "./context";
 
 //import components
@@ -18,15 +15,9 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
 import "./App.css";
-import ScrollAnimation from "react-animate-on-scroll";
 
 function App() {
-	const {
-		setTesting,
-		setScrollAnimation,
-		scrollPosition,
-		setScrollPosition,
-	} = useGlobalContext();
+	const { setScrollPosition } = useGlobalContext();
 
 	const refs = {
 		homeRef: useRef(null),
@@ -36,14 +27,8 @@ function App() {
 		contactRef: useRef(null),
 	};
 
-	// const handleScroll = () => {
-	// 	setScrollPosition(window.scrollY);
-	// 	console.log(scrollPosition);
-	// };
-
 	useEffect(() => {
 		window.onscroll = () => {
-			// console.log(window.scrollY);
 			setScrollPosition(window.scrollY);
 		};
 	}, []);
@@ -53,22 +38,16 @@ function App() {
 			refs.homeRef.current.scrollIntoView();
 		},
 		scrollAbout() {
-			return refs.aboutRef.current.scrollIntoView();
+			refs.aboutRef.current.scrollIntoView();
 		},
 		scrollSkills() {
-			// refs.skillsRef.current.scrollIntoView();
-			// setTesting((prev) => {
-			// 	return prev + 1;
-			// });
-
 			refs.skillsRef.current.scrollIntoView();
-			setScrollAnimation({ ...ScrollAnimation, skills: true });
 		},
 		scrollProjects() {
-			return refs.projectsRef.current.scrollIntoView();
+			refs.projectsRef.current.scrollIntoView();
 		},
 		scrollContact() {
-			return refs.contactRef.current.scrollIntoView();
+			refs.contactRef.current.scrollIntoView();
 		},
 	};
 

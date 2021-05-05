@@ -274,9 +274,10 @@ button {
 .typespan {
 	display: block;
 	font-size: 21px;
-	color: silver;
+
 	font-weight: 800;
 	margin: 3px 0;
+	color: silver;
 	text-shadow: 3px 3px 1px #0d5b31;
 }
 
@@ -407,29 +408,11 @@ button {
 
 /* individual word animation stylings */
 .word-svg {
+	position: absolute;
 	stroke-dasharray: 1000;
 	stroke-dashoffset: 0;
-	margin-top: 8%;
-	margin-left: 15%;
-}
-
-/* #projects-svg path {
-
-} */
-
-.skills-logos {
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	top: 120vh;
-}
-
-.skills-logo {
-	position: relative;
-	left: 30vw;
-	margin-top: 3vh;
-	font-size: 5em;
-	top: 13vh;
+	margin-top: 6%;
+	margin-left: 18%;
 }
 
 .express {
@@ -438,11 +421,6 @@ button {
 	width: 80px;
 	top: 13vh;
 	left: 30vw;
-}
-
-.nodelogo {
-	position: relative;
-	top: 9vh;
 }
 
 /* contact me styling */
@@ -456,11 +434,9 @@ button {
 }
 
 .form-container {
-	display: block;
-	text-align: center;
-	margin-left: 10vw;
-	/* margin-right: 2vw; */
-	/* padding-top: 30vh; */
+	padding-top: 35vh;
+	display: flex;
+	justify-content: center;
 }
 
 .form-control {
@@ -478,8 +454,8 @@ button {
 
 .form-label {
 	font-weight: 700;
-	color: black;
-	text-shadow: 2px 2px 1px white;
+	color: silver;
+	text-shadow: 3px 3px 1px #0d5b31;
 	font-size: 1.3rem;
 }
 
@@ -488,6 +464,8 @@ button {
 	float: right;
 	width: 20vw;
 	height: 4vh;
+	text-indent: 4px;
+	font-family: "Segoe UI";
 }
 
 .textarea-container {
@@ -498,8 +476,8 @@ button {
 	font-weight: 700;
 	position: absolute;
 	top: 0;
-	color: black;
-	text-shadow: 2px 2px 1px white;
+	color: silver;
+	text-shadow: 3px 3px 1px #0d5b31;
 	font-size: 1.3rem;
 }
 
@@ -509,90 +487,27 @@ button {
 	height: 10vh;
 	overflow: hidden;
 	font-size: 1.3rem;
+	text-indent: 4px;
+	font-family: "Segoe UI";
 }
+
 input {
-	border: 2px solid black;
+	border: 2px solid grey;
 	border-radius: 4px;
 	outline: none;
 }
 
 textarea {
-	border: 2px solid black;
+	border: 2px solid grey;
 	border-radius: 4px;
 	outline: none;
 	resize: none;
 }
 
-.spinLeaf {
-	position: absolute;
-	height: 30px;
-	left: 50%;
-}
-
-#firstLeaf {
-	position: relative;
-	top: 200px;
-	left: -30px;
-}
-
-#secondLeaf {
-	position: relative;
-	top: 400px;
-	left: -300px;
-}
-
-#thirdLeaf {
-	position: relative;
-	top: 400px;
-	left: -300px;
-}
-
-#fourthLeaf {
-	position: relative;
-	top: 400px;
-	left: -300px;
-}
-
-#fifthLeaf {
-	position: relative;
-	top: 400px;
-	left: -300px;
-}
-
 /* ------------------ PATH STYLINGS  ( form of divs wrap) ---------------- */
 
-.leafWrap1 {
-	position: absolute;
-	left: 50%;
-	top: -40%;
-}
-
-.leafWrap2 {
-	position: absolute;
-	left: 50%;
-	top: -15%;
-}
-
-.leafWrap3 {
-	position: absolute;
-	left: 60%;
-	top: -60%;
-}
-
-.leafWrap4 {
-	position: absolute;
-	left: 60%;
-	top: -80%;
-}
-
-.leafWrap5 {
-	position: absolute;
-	left: 60%;
-	top: -80%;
-}
-
 /* this shadow is for all the animated svg headers */
-.headerShadow {
+.headerSVGShadow {
 	-webkit-filter: drop-shadow(5px 2px 2px #0d5b31);
 	filter: drop-shadow(5px 2px 2px #0d5b31);
 }
@@ -605,10 +520,83 @@ textarea {
 	text-shadow: 2px 2px 2px #0d5b31;
 }
 
-.discuss {
+/* home pulse animation styling*/
+.dots-wrapper {
+	position: absolute;
+	top: 30vh;
+	left: 57vw;
+	width: 35vw;
+	height: 36vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
+	align-items: flex-start;
+	align-items: center;
+}
+
+.dot {
+	width: 15px;
+	height: 15px;
+	margin: 1px;
+	background: green;
+	box-shadow: 3px 3px blue;
+	transition: scale 1s;
+}
+
+.dot:hover {
+	background: black;
+	transform: scale(2);
+}
+
+.typist-mini {
+	display: block;
 	position: relative;
-	margin-left: 15%;
-	top: -10vh;
+	top: 22vh;
+	left: 18%;
+}
+
+.typist-mini-text {
+	font-size: 1.1em;
 	color: silver;
-	text-shadow: 2px 2px 2px #0d5b31;
+	text-shadow: 3px 3px 1px #0d5b31;
+}
+
+/* skills all stylings */
+
+.typist-mini-skills2 {
+	display: block;
+	position: relative;
+	top: 10vh;
+	left: 18%;
+}
+
+.mernskills {
+	padding-top: 35vh;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	transform: translateX(-200px);
+}
+
+.mernskill {
+	display: inline-block;
+	opacity: 0;
+	background-position: center center;
+	position: relative;
+	top: -15px;
+}
+
+.subskill {
+	opacity: 0;
+	padding-right: 50px;
+}
+
+.subskills {
+	padding-top: 15vh;
+	padding-left: 25vw;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	width: 60vw;
+	transform: translateX(200px);
 }
