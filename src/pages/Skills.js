@@ -18,7 +18,7 @@ import npmlogo from "../images/npmlogo.svg";
 import { useGlobalContext } from "../context";
 
 const Skills = (props) => {
-	const [skillsAnimationPlaying, setSkillsAnimationPlaying] = useState(true);
+	const [skillsAnimationPlaying, setSkillsAnimationPlaying] = useState(false);
 
 	const { scrollPosition } = useGlobalContext();
 
@@ -39,10 +39,10 @@ const Skills = (props) => {
 			.add(
 				{
 					targets: ".word-svg path",
-					fill: "#C0C0C0",
+					fill: "#FFFFFF",
 					duration: 3500,
 				},
-				"-=3400"
+				"-=3500"
 			)
 			.add(
 				{

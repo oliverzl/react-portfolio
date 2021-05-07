@@ -30,7 +30,7 @@ const Contact = (props) => {
 			.add(
 				{
 					targets: ".word-svg path",
-					fill: "#C0C0C0",
+					fill: "#FFFFFF",
 					duration: 4000,
 				},
 				"-=4500"

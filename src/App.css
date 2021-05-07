@@ -134,6 +134,7 @@ button {
 
 .main-bg {
 	height: 100vh;
+	position: relative;
 }
 
 .main-bg1 {
@@ -277,12 +278,12 @@ button {
 
 	font-weight: 800;
 	margin: 3px 0;
-	color: silver;
+	color: #ffffff;
 	text-shadow: 3px 3px 1px #0d5b31;
 }
 
 .typespan-h2 {
-	color: silver;
+	color: #ffffff;
 }
 
 .btn1 {
@@ -360,14 +361,14 @@ button {
 .about-h4 {
 	width: 80%;
 	margin: 0 auto;
-	color: silver;
+	color: #ffffff;
 	margin-bottom: 5%;
 }
 
 .about-h5 {
 	width: 80%;
 	margin: 0 auto;
-	color: silver;
+	color: #ffffff;
 }
 
 .about-dp {
@@ -387,7 +388,7 @@ button {
 	position: relative;
 	top: 15%;
 	text-align: center;
-	color: silver;
+	color: white;
 	text-shadow: 3px 3px 1px #0d5b31;
 }
 
@@ -401,7 +402,7 @@ button {
 
 /* all path stylings (animation) */
 .svg-path {
-	stroke: silver;
+	stroke: white;
 	stroke-width: 2;
 	fill: none;
 }
@@ -424,14 +425,6 @@ button {
 }
 
 /* contact me styling */
-.contact-h1 {
-	padding-top: 15vh;
-	text-align: center;
-}
-
-.contact-p {
-	text-align: center;
-}
 
 .form-container {
 	padding-top: 35vh;
@@ -454,7 +447,7 @@ button {
 
 .form-label {
 	font-weight: 700;
-	color: silver;
+	color: #ffffff;
 	text-shadow: 3px 3px 1px #0d5b31;
 	font-size: 1.3rem;
 }
@@ -476,7 +469,7 @@ button {
 	font-weight: 700;
 	position: absolute;
 	top: 0;
-	color: silver;
+	color: #ffffff;
 	text-shadow: 3px 3px 1px #0d5b31;
 	font-size: 1.3rem;
 }
@@ -512,40 +505,38 @@ textarea {
 	filter: drop-shadow(5px 2px 2px #0d5b31);
 }
 
-.clickrestart {
-	position: relative;
-	bottom: 10vh;
-	text-align: center;
-	color: silver;
-	text-shadow: 2px 2px 2px #0d5b31;
-}
-
 /* home pulse animation styling*/
+
 .dots-wrapper {
 	position: absolute;
 	top: 30vh;
 	left: 57vw;
-	width: 35vw;
-	height: 36vh;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: left;
-	align-items: flex-start;
-	align-items: center;
+	display: grid;
+	grid-template-columns: repeat(35, 0.9vw);
+	grid-template-rows: repeat(20, 0.9vw);
 }
 
 .dot {
-	width: 15px;
-	height: 15px;
-	margin: 1px;
+	width: 0.7vw;
+	height: 0.7vw;
+	margin: 0.1vw;
 	background: green;
 	box-shadow: 3px 3px blue;
+	transform: scale(1);
 	transition: scale 1s;
 }
 
 .dot:hover {
-	background: black;
+	background: blue;
 	transform: scale(2);
+}
+
+.dot1 {
+	width: 0.7vw;
+	height: 0.7vw;
+	margin: 0.1vw;
+	background: green;
+	box-shadow: 3px 3px blue;
 }
 
 .typist-mini {
@@ -557,7 +548,7 @@ textarea {
 
 .typist-mini-text {
 	font-size: 1.1em;
-	color: silver;
+	color: #ffffff;
 	text-shadow: 3px 3px 1px #0d5b31;
 }
 
@@ -568,6 +559,65 @@ textarea {
 	position: relative;
 	top: 10vh;
 	left: 18%;
+}
+
+.subskill {
+	opacity: 0;
+	padding-right: 50px;
+}
+
+.subskills {
+	padding-top: 15vh;
+	padding-left: 25vw;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	width: 60vw;
+	transform: translateX(200px);
+}
+
+/* projects styling */
+
+.projectsGrid {
+	height: 60vh;
+	width: 70vw;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -30vh;
+	margin-left: -30vw;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	grid-template-rows: repeat(3, auto);
+	justify-content: center;
+	/* position: relative;
+	z-index: -2;
+	justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	grid-template-rows: repeat(3, auto); */
+}
+
+.singleProject {
+	background: blue;
+	height: 12vw;
+	width: 12vw;
+	margin: 3vw;
+	flex-wrap: wrap;
+	z-index: 3;
+	border-radius: 7%;
+}
+
+.firstProjectRow {
+	opacity: 0;
+	position: relative;
+	top: -200px;
+}
+.secondProjectRow {
+	opacity: 0;
+	position: relative;
+	top: 200px;
 }
 
 .mernskills {
@@ -584,19 +634,4 @@ textarea {
 	background-position: center center;
 	position: relative;
 	top: -15px;
-}
-
-.subskill {
-	opacity: 0;
-	padding-right: 50px;
-}
-
-.subskills {
-	padding-top: 15vh;
-	padding-left: 25vw;
-	display: flex;
-	justify-content: left;
-	align-items: center;
-	width: 60vw;
-	transform: translateX(200px);
 }

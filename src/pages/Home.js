@@ -7,13 +7,13 @@ import { useGlobalContext } from "../context";
 
 const Home = (props) => {
 	//pulseAnimateStates:
-	const [animationIndex, setAnimationIndex] = useState(232);
+	const [animationIndex, setAnimationIndex] = useState(368);
 	const [changingState, setChangingState] = useState(0);
 	const [animationPlaying, setAnimationPlaying] = useState(false);
 
 	let animation;
 
-	const grid = [31, 15];
+	const grid = [35, 20];
 	var numberOfElements = grid[0] * grid[1];
 	let index;
 
@@ -33,6 +33,7 @@ const Home = (props) => {
 			setAnimationPlaying(true);
 			// eslint-disable-next-line
 			index = animationIndex;
+			console.log(index);
 			// eslint-disable-next-line
 			animation = anime
 				.timeline({
@@ -42,12 +43,12 @@ const Home = (props) => {
 				.add({
 					targets: ".stagger-visualizer .dot",
 					scale: [
-						{ value: 0.5, easing: "easeOutSine", duration: 70 },
-						{ value: 1.1, easing: "easeOutSine", duration: 90 },
-						{ value: 1, easing: "easeInOutQuad", duration: 150 },
+						{ value: 0.5, easing: "easeOutSine", duration: 45 },
+						{ value: 1.4, easing: "easeOutSine", duration: 50 },
+						{ value: 1, easing: "easeInOutQuad", duration: 80 },
 					],
 
-					delay: anime.stagger(30, { grid: grid, from: index }),
+					delay: anime.stagger(25, { grid: grid, from: index }),
 				});
 		}
 	}, [changingState]);
@@ -56,13 +57,13 @@ const Home = (props) => {
 		<div className="main-bg scroll-section" ref={props.refProp}>
 			<div className="hero">
 				<div className="heroInfo">
-					<Typist cursor={{ show: false }} avgTypingDelay={55}>
+					<Typist cursor={{ show: false }} avgTypingDelay={40}>
 						<Typist.Delay ms={300} />
 						<span className="typespan firstbodytag">&lt;body&gt;</span>
 					</Typist>
 					<div className="description">
-						<Typist cursor={{ show: false }} avgTypingDelay={55}>
-							<Typist.Delay ms={1000} />
+						<Typist cursor={{ show: false }} avgTypingDelay={40}>
+							<Typist.Delay ms={800} />
 							<span className="typespan">&lt;h1&gt;</span>
 							<h2 className="typespan-h2">
 								Hi! <br />
@@ -73,10 +74,10 @@ const Home = (props) => {
 					</div>
 					<Typist
 						cursor={{ show: false }}
-						avgTypingDelay={55}
+						avgTypingDelay={40}
 						className="lastTypist"
 					>
-						<Typist.Delay ms={4100} />
+						<Typist.Delay ms={2950} />
 						<span className="typespan lastspan">&lt;/body&gt;</span>
 					</Typist>
 				</div>
@@ -87,10 +88,9 @@ const Home = (props) => {
 							{array1.map((item, index) => {
 								return (
 									<div
-										className="dot"
+										className={animationPlaying ? "dot1" : "dot"}
 										key={index}
 										onClick={() => {
-											console.log("hello");
 											setAnimationIndex(item);
 											setChangingState((prev) => {
 												return prev + 1;
@@ -103,10 +103,6 @@ const Home = (props) => {
 					</div>
 				</div>
 			</div>
-
-			<h6 className="clickrestart">
-				Click the headers to restart the animation
-			</h6>
 		</div>
 	);
 };
