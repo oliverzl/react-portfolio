@@ -427,22 +427,19 @@ button {
 /* contact me styling */
 
 .form-container {
-	padding-top: 35vh;
-	display: flex;
-	justify-content: center;
-}
+	display: grid;
+	position: absolute;
 
-.form-control {
-	display: inline-block;
-	text-align: left;
-	outline: none;
+	top: 50%;
+	margin-top: -17.5vh;
+	left: 50%;
+	margin-left: -12.5vw;
+	grid-template-columns: 25vw;
 }
 
 .form-1 {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 1vh;
+	display: block;
+	position: relative;
 }
 
 .form-label {
@@ -453,50 +450,42 @@ button {
 }
 
 .form-input {
-	margin-left: 3vw;
-	float: right;
-	width: 20vw;
-	height: 4vh;
-	text-indent: 4px;
-	font-family: "Segoe UI";
-}
-
-.textarea-container {
-	position: relative;
-}
-
-.message-label {
-	font-weight: 700;
-	position: absolute;
-	top: 0;
-	color: #ffffff;
-	text-shadow: 3px 3px 1px #0d5b31;
-	font-size: 1.3rem;
-}
-
-.message-textarea {
-	float: right;
-	width: 20vw;
-	height: 10vh;
-	overflow: hidden;
-	font-size: 1.3rem;
-	text-indent: 4px;
-	font-family: "Segoe UI";
-}
-
-input {
+	display: inline-block;
+	width: 25vw;
+	text-indent: 3px;
+	font-size: 0.9rem;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	border: 2px solid grey;
 	border-radius: 4px;
 	outline: none;
+	height: 4vh;
+	padding: 5px;
+	margin-bottom: 0.5vh;
 }
 
 textarea {
+	padding: 5px;
+	width: 25vw;
+	height: 10vh;
+	resize: none;
+	text-indent: 3px;
+	font-size: 1rem;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	border: 2px solid grey;
 	border-radius: 4px;
 	outline: none;
-	resize: none;
 }
 
+.contact-submit {
+	width: 25vw;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	border: 2px solid grey;
+	border-radius: 4px;
+	outline: none;
+	font-size: 0.9rem;
+	height: 4vh;
+	font-weight: 500;
+}
 /* ------------------ PATH STYLINGS  ( form of divs wrap) ---------------- */
 
 /* this shadow is for all the animated svg headers */
@@ -591,12 +580,6 @@ textarea {
 	grid-template-columns: repeat(3, auto);
 	grid-template-rows: repeat(3, auto);
 	justify-content: center;
-	/* position: relative;
-	z-index: -2;
-	justify-content: center;
-	display: grid;
-	grid-template-columns: repeat(3, auto);
-	grid-template-rows: repeat(3, auto); */
 }
 
 .singleProject {

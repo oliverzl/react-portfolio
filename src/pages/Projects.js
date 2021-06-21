@@ -27,10 +27,10 @@ const Projects = (props) => {
 			.add(
 				{
 					targets: ".word-svg path",
-					fill: "#C0C0C0",
+					fill: "#FFFFFF",
 					duration: 3500,
 				},
-				"-=3400"
+				"-=4100"
 			)
 			.add(
 				{
@@ -41,7 +41,7 @@ const Projects = (props) => {
 					delay: anime.stagger(250),
 					loop: 1,
 				},
-				"100"
+				"1000"
 			)
 
 			.add(
@@ -54,7 +54,7 @@ const Projects = (props) => {
 					delay: anime.stagger(250, { direction: "reverse" }),
 					loop: 1,
 				},
-				"200"
+				"1300"
 			);
 	}, [projectsAnimationPlaying]);
 
