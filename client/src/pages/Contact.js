@@ -84,6 +84,10 @@ const Contact = (props) => {
 		}
 	};
 
+	const clear = () => {
+		setContactState({ name: "", email: "", message: "" });
+	};
+
 	const handleEmailButton = () => {
 		setTimeout(() => {
 			setIsLoading(false);
@@ -94,6 +98,7 @@ const Contact = (props) => {
 	};
 
 	const handleEmailReset = () => {
+		clear();
 		setTimeout(() => {
 			setEmailButton("Submit");
 		}, 5000);
@@ -127,7 +132,8 @@ const Contact = (props) => {
 							name="name"
 							autoComplete="off"
 							placeholder="Name:"
-							onChange={handleChange}
+							value={contactState.name}
+							onChange={(event) => setContactState({ ...contactState, name: event.target.value })}
 						/>
 					</div>
 
@@ -138,13 +144,21 @@ const Contact = (props) => {
 							name="email"
 							autoComplete="off"
 							placeholder="Email:"
-							onChange={handleChange}
+							value={contactState.email}
+							onChange={(event) => setContactState({ ...contactState, email: event.target.value })}
 							required
 						/>
 					</div>
 
 					<div className="textarea-container">
-						<textarea className="message-textarea" type="text" name="message" placeholder="Message:" onChange={handleChange} />
+						<textarea
+							className="message-textarea"
+							type="text"
+							name="message"
+							placeholder="Message:"
+							value={contactState.message}
+							onChange={(event) => setContactState({ ...contactState, message: event.target.value })}
+						/>
 					</div>
 
 					{isLoading ? (
