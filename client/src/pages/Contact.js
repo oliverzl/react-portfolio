@@ -1,10 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Button, CircularProgress } from "@material-ui/core";
 import anime from "animejs/lib/anime.es.js";
 import Typist from "react-typist";
+import { sendMail } from "../api/index";
+
+import useStyles from "./contactStyles";
 
 import { useGlobalContext } from "../context";
 
 const Contact = (props) => {
+	const [allfields, setAllfields] = useState(true);
+	const [isLoading, setIsLoading] = useState(false);
+	const [emailButton, setEmailButton] = useState("Submit");
 	const [contactState, setContactState] = useState({
 		name: "",
 		email: "",
@@ -56,14 +63,41 @@ const Contact = (props) => {
 	const handleChange = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
-
 		setContactState({ ...contactState, [name]: value });
 	};
 
-	const resetForm = () => {
-		setContactState({ name: "", email: "", message: "" });
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		if (contactState.name && contactState.email && contactState.message) {
+			console.log("all true");
+			sendMail({ contactState });
+			setTimeout(() => {
+				setIsLoading(true);
+			}, 700);
+			handleEmailButton();
+		} else {
+			console.log("not true");
+			setAllfields(false);
+			setTimeout(() => {
+				setAllfields(true);
+			}, 2000);
+		}
 	};
-	const handleSubmit = (e) => {};
+
+	const handleEmailButton = () => {
+		setTimeout(() => {
+			setIsLoading(false);
+			setEmailButton("Email sent!");
+		}, 1500);
+
+		handleEmailReset();
+	};
+
+	const handleEmailReset = () => {
+		setTimeout(() => {
+			setEmailButton("Submit");
+		}, 5000);
+	};
 
 	return (
 		<div className="main-bg" ref={props.refProp}>
@@ -98,15 +132,34 @@ const Contact = (props) => {
 					</div>
 
 					<div className="form-1">
-						<input className="form-input" type="text" name="email" autoComplete="off" placeholder="Email:" />
+						<input
+							className="form-input"
+							type="text"
+							name="email"
+							autoComplete="off"
+							placeholder="Email:"
+							onChange={handleChange}
+							required
+						/>
 					</div>
 
 					<div className="textarea-container">
-						<textarea className="message-textarea" type="text" name="message" placeholder="Message:" />
+						<textarea className="message-textarea" type="text" name="message" placeholder="Message:" onChange={handleChange} />
 					</div>
-					<button className="contact-submit" type="submit">
-						Submit
-					</button>
+
+					{isLoading ? (
+						<Button className="contact-submit" variant="contained">
+							{""}
+						</Button>
+					) : allfields ? (
+						<Button className="contact-submit" type="submit" onClick={handleSubmit} variant="contained">
+							{emailButton}
+						</Button>
+					) : (
+						<Button color="secondary" variant="contained" className="contact-submit">
+							Please fill in all fields!
+						</Button>
+					)}
 				</form>
 			</div>
 		</div>
