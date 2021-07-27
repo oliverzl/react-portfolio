@@ -72,11 +72,7 @@ const Home = (props) => {
 							<span className="typespan">&lt;/h1&gt;</span>
 						</Typist>
 					</div>
-					<Typist
-						cursor={{ show: false }}
-						avgTypingDelay={40}
-						className="lastTypist"
-					>
+					<Typist cursor={{ show: false }} avgTypingDelay={40} className="lastTypist">
 						<Typist.Delay ms={2950} />
 						<span className="typespan lastspan">&lt;/body&gt;</span>
 					</Typist>

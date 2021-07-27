@@ -59,13 +59,6 @@ const Contact = (props) => {
 		} else setContactAnimationPlaying(false);
 	}, [scrollPosition]);
 
-	//Contact form state changes
-	const handleChange = (e) => {
-		const name = e.target.name;
-		const value = e.target.value;
-		setContactState({ ...contactState, [name]: value });
-	};
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (contactState.name && contactState.email && contactState.message) {

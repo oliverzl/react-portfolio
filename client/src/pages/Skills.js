@@ -116,14 +116,13 @@ const Skills = (props) => {
 								<Typist.Delay ms={2000} />
 								<h4 className="typist-mini-text">As well as..</h4>
 							</Typist>
-
-							<div className="subskills">
-								<img className="subskill" src={animejslogo} alt="" height="60pt" style={{ marginLeft: "10px" }} />
-								<img className="subskill" src={bootstrap1} alt="" height="60pt" style={{ marginLeft: "10px" }} />
-								<img className="subskill" src={giticon} alt="" height="60pt" style={{ marginLeft: "10px" }} />
-
-								<img className="subskill" src={webpacklogo} alt="" height="80pt" style={{ marginLeft: "10px" }} />
-								<img className="subskill" src={npmlogo} alt="" height="80pt" style={{ marginLeft: "10px" }} />
+							<div className="subskillsmain">
+								<div className="subskills">
+									<img className="subskill" src={animejslogo} alt="" height="50pt" />
+									<img className="subskill" src={bootstrap1} alt="" height="60pt" />
+									<img className="subskill" src={giticon} alt="" height="60pt" />
+									<img className="subskill" src={webpacklogo} alt="" height="60pt" />
+								</div>
 							</div>
 						</div>
 					</div>
